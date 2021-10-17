@@ -1,0 +1,889 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FCD175BD-74A7-41ED-BF31-A8FEEEF1C277}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApplication</RootNamespace>
+    <AssemblyName>WebApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CKEditor.NET, Version=3.6.6.2, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Web\dll\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Activities, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.AspNet.EntityDataSource, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.EntityDataSource.6.0.0\lib\net40\Microsoft.AspNet.EntityDataSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PersianDateControls 2.0, Version=2.0.3505.24227, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\PersianDateControls 2.0.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+    <Content Include="App_Themes\Default\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="App_Themes\Default\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="App_Themes\Default\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="App_Themes\Default\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="App_Themes\Default\css\fonts\BBCNassim-Bold.eot" />
+    <Content Include="App_Themes\Default\css\fonts\BBCNassim-Bold.ttf" />
+    <Content Include="App_Themes\Default\css\fonts\DroidNaskh-Bold.ttf" />
+    <Content Include="App_Themes\Default\css\fonts\DroidNaskh-Regular.ttf" />
+    <Content Include="App_Themes\Default\css\fonts\flexslider-icon.eot" />
+    <Content Include="App_Themes\Default\css\fonts\flexslider-icon.ttf" />
+    <Content Include="App_Themes\Default\css\fonts\flexslider-icon.woff" />
+    <Content Include="App_Themes\Default\css\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="App_Themes\Default\css\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="App_Themes\Default\css\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="App_Themes\Default\css\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="App_Themes\Default\css\fonts\IRANSans.eot" />
+    <Content Include="App_Themes\Default\css\fonts\IRANSans.ttf" />
+    <Content Include="App_Themes\Default\css\fonts\IRANSans.ttf.ttf" />
+    <Content Include="App_Themes\Default\css\fonts\IRANSans.woff" />
+    <Content Include="App_Themes\Default\css\fonts\IRANSansWeb.eot" />
+    <Content Include="App_Themes\Default\css\fonts\IRANSansWeb.ttf" />
+    <Content Include="App_Themes\Default\css\fonts\IRANSansWeb.woff" />
+    <Content Include="App_Themes\Default\css\fonts\IRANSansWeb.woff2" />
+    <Content Include="App_Themes\Default\css\fonts\kodak.eot" />
+    <Content Include="App_Themes\Default\css\fonts\kodak.ttf" />
+    <Content Include="App_Themes\Default\css\fonts\kodak.woff" />
+    <Content Include="App_Themes\Default\css\fonts\mitra.eot" />
+    <Content Include="App_Themes\Default\css\fonts\mitra.ttf" />
+    <Content Include="App_Themes\Default\css\fonts\mitra.woff" />
+    <Content Include="App_Themes\Default\css\fonts\nazanin.eot" />
+    <Content Include="App_Themes\Default\css\fonts\nazanin.ttf" />
+    <Content Include="App_Themes\Default\css\fonts\nazanin.woff" />
+    <Content Include="App_Themes\Default\fonts\BBCNassim-Bold.eot" />
+    <Content Include="App_Themes\Default\fonts\BBCNassim-Bold.ttf" />
+    <Content Include="App_Themes\Default\fonts\DroidNaskh-Bold.ttf" />
+    <Content Include="App_Themes\Default\fonts\DroidNaskh-Regular.ttf" />
+    <Content Include="App_Themes\Default\fonts\flexslider-icon.eot" />
+    <Content Include="App_Themes\Default\fonts\flexslider-icon.ttf" />
+    <Content Include="App_Themes\Default\fonts\flexslider-icon.woff" />
+    <Content Include="App_Themes\Default\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="App_Themes\Default\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="App_Themes\Default\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="App_Themes\Default\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="App_Themes\Default\fonts\IRANSans.eot" />
+    <Content Include="App_Themes\Default\fonts\IRANSans.ttf" />
+    <Content Include="App_Themes\Default\fonts\IRANSans.ttf.ttf" />
+    <Content Include="App_Themes\Default\fonts\IRANSans.woff" />
+    <Content Include="App_Themes\Default\fonts\IRANSansWeb.eot" />
+    <Content Include="App_Themes\Default\fonts\IRANSansWeb.ttf" />
+    <Content Include="App_Themes\Default\fonts\IRANSansWeb.woff" />
+    <Content Include="App_Themes\Default\fonts\IRANSansWeb.woff2" />
+    <Content Include="App_Themes\Default\fonts\kodak.eot" />
+    <Content Include="App_Themes\Default\fonts\kodak.ttf" />
+    <Content Include="App_Themes\Default\fonts\kodak.woff" />
+    <Content Include="App_Themes\Default\fonts\mitra.eot" />
+    <Content Include="App_Themes\Default\fonts\mitra.ttf" />
+    <Content Include="App_Themes\Default\fonts\mitra.woff" />
+    <Content Include="App_Themes\Default\fonts\nazanin.eot" />
+    <Content Include="App_Themes\Default\fonts\nazanin.ttf" />
+    <Content Include="App_Themes\Default\fonts\nazanin.woff" />
+    <Content Include="App_Themes\Default\SkinFile.skin" />
+    <Content Include="App_Themes\Default\type\marketdeco\marketdeco-webfont.eot" />
+    <Content Include="App_Themes\Default\type\marketdeco\marketdeco-webfont.ttf" />
+    <Content Include="App_Themes\Default\type\marketdeco\marketdeco-webfont.woff" />
+    <Content Include="App_Themes\Default\type\merriweather\merriweather-webfont.eot" />
+    <Content Include="App_Themes\Default\type\merriweather\merriweather-webfont.ttf" />
+    <Content Include="App_Themes\Default\type\merriweather\merriweather-webfont.woff" />
+    <Content Include="App_Themes\Panel\font\BROYA.TTF" />
+    <Content Include="App_Themes\Panel\font\BROYABD.TTF" />
+    <Content Include="App_Themes\Panel\font\B_Yekan.ttf" />
+    <Content Include="App_Themes\Panel\SkinFile.skin" />
+    <Content Include="Account\Handler.ashx" />
+    <Content Include="Account\Web.config" />
+    <Content Include="App_MasterPage\DefaultMasterPage.master" />
+    <Content Include="App_MasterPage\PanelMasterPage.master" />
+    <Content Include="App_MasterPage\SchoolMasterPage.master" />
+    <Content Include="Files\JoinUs\Files\444.skb" />
+    <Content Include="SiteMaps\Administrator.sitemap" />
+    <Content Include="SiteMaps\Content.sitemap" />
+    <Content Include="SiteMaps\Default.sitemap" />
+    <Content Include="SiteMaps\Manager.sitemap" />
+    <Content Include="SiteMaps\Marketing.sitemap" />
+    <Content Include="SiteMaps\School.sitemap" />
+    <Content Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web1.Debug.config">
+      <DependentUpon>Web1.config</DependentUpon>
+    </None>
+    <None Include="Web1.Release.config">
+      <DependentUpon>Web1.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Account\Profile.aspx" />
+    <Content Include="App_Themes\Default\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="App_Themes\Default\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="App_Themes\Default\bootstrap\css\bootstrap.3.3.5.css" />
+    <Content Include="App_Themes\Default\bootstrap\css\bootstrap.3.3.5.min.css" />
+    <Content Include="App_Themes\Default\bootstrap\css\bootstrap.css" />
+    <Content Include="App_Themes\Default\bootstrap\css\bootstrap.min.css" />
+    <Content Include="App_Themes\Default\bootstrap\css\hovereffect.css" />
+    <Content Include="App_Themes\Default\bootstrap\css\icon.css" />
+    <Content Include="App_Themes\Default\bootstrap\css\icon.min.css" />
+    <Content Include="App_Themes\Default\bootstrap\css\_bootstrap.3.3.5.min.css" />
+    <Content Include="App_Themes\Default\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="App_Themes\Default\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="App_Themes\Default\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="App_Themes\Default\css\animate.css" />
+    <Content Include="App_Themes\Default\css\bootstrap.min.css" />
+    <Content Include="App_Themes\Default\css\flexslider.css" />
+    <Content Include="App_Themes\Default\css\font.css" />
+    <Content Include="App_Themes\Default\css\font.min.css" />
+    <Content Include="App_Themes\Default\css\fonts.css" />
+    <Content Include="App_Themes\Default\css\fonts.min.css" />
+    <Content Include="App_Themes\Default\css\fonts\BBCNassim-Bold.svg" />
+    <Content Include="App_Themes\Default\css\fonts\flexslider-icon.svg" />
+    <Content Include="App_Themes\Default\css\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="App_Themes\Default\css\ie7.css" />
+    <Content Include="App_Themes\Default\css\ie8.css" />
+    <Content Include="App_Themes\Default\css\ie9.css" />
+    <Content Include="App_Themes\Default\css\login.css" />
+    <Content Include="App_Themes\Default\css\owl.carousel.css" />
+    <Content Include="App_Themes\Default\css\prettyPhoto.css" />
+    <Content Include="App_Themes\Default\css\queries.css" />
+    <Content Include="App_Themes\Default\css\school.css" />
+    <Content Include="App_Themes\Default\css\style.css" />
+    <Content Include="App_Themes\Default\css\view.css" />
+    <Content Include="App_Themes\Default\fonts\BBCNassim-Bold.svg" />
+    <Content Include="App_Themes\Default\fonts\flexslider-icon.svg" />
+    <Content Include="App_Themes\Default\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="App_Themes\Default\images\arrows.png" />
+    <Content Include="App_Themes\Default\images\art\about.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery-th.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery1-full.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery1.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery10-full.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery10.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery2-full.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery2.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery3-full.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery3.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery4-full.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery4.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery5-full.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery5.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery6-full.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery6.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery7-full.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery7.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery8-full.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery8.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery9-full.jpg" />
+    <Content Include="App_Themes\Default\images\art\gallery9.jpg" />
+    <Content Include="App_Themes\Default\images\art\post1.jpg" />
+    <Content Include="App_Themes\Default\images\art\post2.jpg" />
+    <Content Include="App_Themes\Default\images\art\post3.jpg" />
+    <Content Include="App_Themes\Default\images\bg1.png" />
+    <Content Include="App_Themes\Default\images\bgtoppage.jpg" />
+    <Content Include="App_Themes\Default\images\black-bg.png" />
+    <Content Include="App_Themes\Default\images\button-bg.png" />
+    <Content Include="App_Themes\Default\images\dark-bullet.png" />
+    <Content Include="App_Themes\Default\images\download.png" />
+    <Content Include="App_Themes\Default\images\favicon.png" />
+    <Content Include="App_Themes\Default\images\footer-line.png" />
+    <Content Include="App_Themes\Default\images\icon-article.png" />
+    <Content Include="App_Themes\Default\images\icon-audio.png" />
+    <Content Include="App_Themes\Default\images\icon-chat.png" />
+    <Content Include="App_Themes\Default\images\icon-digg.png" />
+    <Content Include="App_Themes\Default\images\icon-dribbble.png" />
+    <Content Include="App_Themes\Default\images\icon-facebook.png" />
+    <Content Include="App_Themes\Default\images\icon-featured.png" />
+    <Content Include="App_Themes\Default\images\icon-flickr.png" />
+    <Content Include="App_Themes\Default\images\icon-forrst.png" />
+    <Content Include="App_Themes\Default\images\icon-gallery.png" />
+    <Content Include="App_Themes\Default\images\icon-google.png" />
+    <Content Include="App_Themes\Default\images\icon-image.png" />
+    <Content Include="App_Themes\Default\images\icon-lastfm.png" />
+    <Content Include="App_Themes\Default\images\icon-link.png" />
+    <Content Include="App_Themes\Default\images\icon-linkedin.png" />
+    <Content Include="App_Themes\Default\images\icon-pinterest.png" />
+    <Content Include="App_Themes\Default\images\icon-plus.png" />
+    <Content Include="App_Themes\Default\images\icon-quote.png" />
+    <Content Include="App_Themes\Default\images\icon-rss.png" />
+    <Content Include="App_Themes\Default\images\icon-search.png" />
+    <Content Include="App_Themes\Default\images\icon-skype.png" />
+    <Content Include="App_Themes\Default\images\icon-tumblr.png" />
+    <Content Include="App_Themes\Default\images\icon-twitter.png" />
+    <Content Include="App_Themes\Default\images\icon-video.png" />
+    <Content Include="App_Themes\Default\images\icon-vimeo.png" />
+    <Content Include="App_Themes\Default\images\icon-youtube.png" />
+    <Content Include="App_Themes\Default\images\icon\boy.png" />
+    <Content Include="App_Themes\Default\images\icon\first.png" />
+    <Content Include="App_Themes\Default\images\icon\girl.png" />
+    <Content Include="App_Themes\Default\images\icon\gray\boy.png" />
+    <Content Include="App_Themes\Default\images\icon\gray\first.png" />
+    <Content Include="App_Themes\Default\images\icon\gray\girl.png" />
+    <Content Include="App_Themes\Default\images\icon\gray\second.png" />
+    <Content Include="App_Themes\Default\images\icon\gray\tuition.png" />
+    <Content Include="App_Themes\Default\images\icon\search.png" />
+    <Content Include="App_Themes\Default\images\icon\second.png" />
+    <Content Include="App_Themes\Default\images\icon\tuition.png" />
+    <Content Include="App_Themes\Default\images\light-bullet.png" />
+    <Content Include="App_Themes\Default\images\line.png" />
+    <Content Include="App_Themes\Default\images\loading.gif" />
+    <Content Include="App_Themes\Default\images\logo-bottom.png" />
+    <Content Include="App_Themes\Default\images\logo-bottom1.png" />
+    <Content Include="App_Themes\Default\images\logo-old.png" />
+    <Content Include="App_Themes\Default\images\logo.png" />
+    <Content Include="App_Themes\Default\images\logo1.png" />
+    <Content Include="App_Themes\Default\images\main\main-left.png" />
+    <Content Include="App_Themes\Default\images\main\main-left0.png" />
+    <Content Include="App_Themes\Default\images\main\main-right01.png" />
+    <Content Include="App_Themes\Default\images\main\main-right02.png" />
+    <Content Include="App_Themes\Default\images\main\main-right02Old.png" />
+    <Content Include="App_Themes\Default\images\menu-bg.png" />
+    <Content Include="App_Themes\Default\images\nav-arrows-dark.png" />
+    <Content Include="App_Themes\Default\images\nav-arrows-light.png" />
+    <Content Include="App_Themes\Default\images\slider\slide_shadow.png" />
+    <Content Include="App_Themes\Default\images\tick.png" />
+    <Content Include="App_Themes\Default\images\white-bg.png" />
+    <Content Include="App_Themes\Default\images\جستجوی مدرسه.jpg" />
+    <Content Include="App_Themes\Default\images\مدرسه.png" />
+    <Content Include="App_Themes\Default\js\animate.js" />
+    <Content Include="App_Themes\Default\js\bootstrap.min.js" />
+    <Content Include="App_Themes\Default\js\ddsmoothmenu.js" />
+    <Content Include="App_Themes\Default\js\html5.js" />
+    <Content Include="App_Themes\Default\js\jquery-1.7.1.min.js" />
+    <Content Include="App_Themes\Default\js\jquery.BlackAndWhite.js" />
+    <Content Include="App_Themes\Default\js\jquery.fitvids.js" />
+    <Content Include="App_Themes\Default\js\jquery.flexslider-min.js" />
+    <Content Include="App_Themes\Default\js\jquery.infieldlabel.min.js" />
+    <Content Include="App_Themes\Default\js\jquery.min.js" />
+    <Content Include="App_Themes\Default\js\jquery.nicescroll.min.js" />
+    <Content Include="App_Themes\Default\js\jquery.prettyPhoto.js" />
+    <Content Include="App_Themes\Default\js\myscript.js" />
+    <Content Include="App_Themes\Default\js\owl.carousel.js" />
+    <Content Include="App_Themes\Default\js\scripts.js" />
+    <Content Include="App_Themes\Default\js\selectnav.js" />
+    <Content Include="App_Themes\Default\js\superfish.min.js" />
+    <Content Include="App_Themes\Default\js\twitter.min.js" />
+    <Content Include="App_Themes\Default\style.css" />
+    <Content Include="App_Themes\Default\type\marketdeco.css" />
+    <Content Include="App_Themes\Default\type\marketdeco\marketdeco-webfont.svg" />
+    <Content Include="App_Themes\Default\type\merriweather.css" />
+    <Content Include="App_Themes\Default\type\merriweather\merriweather-webfont.svg" />
+    <Content Include="App_Themes\Panel\css\blue%402x.png" />
+    <Content Include="App_Themes\Panel\css\blue.css" />
+    <Content Include="App_Themes\Panel\css\blue.png" />
+    <Content Include="App_Themes\Panel\css\B_Roya.css" />
+    <Content Include="App_Themes\Panel\css\B_Yekan.css" />
+    <Content Include="App_Themes\Panel\css\calendar\active-bg.gif" />
+    <Content Include="App_Themes\Panel\css\calendar\active-bg.png" />
+    <Content Include="App_Themes\Panel\css\calendar\dark-bg.gif" />
+    <Content Include="App_Themes\Panel\css\calendar\hover-bg.gif" />
+    <Content Include="App_Themes\Panel\css\calendar\hover-bg.png" />
+    <Content Include="App_Themes\Panel\css\calendar\menuarrow.gif" />
+    <Content Include="App_Themes\Panel\css\calendar\normal-bg.gif" />
+    <Content Include="App_Themes\Panel\css\calendar\rowhover-bg.gif" />
+    <Content Include="App_Themes\Panel\css\calendar\status-bg.gif" />
+    <Content Include="App_Themes\Panel\css\calendar\theme.css" />
+    <Content Include="App_Themes\Panel\css\calendar\title-bg.gif" />
+    <Content Include="App_Themes\Panel\css\calendar\today-bg.gif" />
+    <Content Include="App_Themes\Panel\css\menu.css" />
+    <Content Include="App_Themes\Panel\css\noJS.css" />
+    <Content Include="App_Themes\Panel\css\style.css" />
+    <Content Include="App_Themes\Panel\images\booking\calendar-icon.png" />
+    <Content Include="App_Themes\Panel\images\booking\change-password-btn.png" />
+    <Content Include="App_Themes\Panel\images\booking\clock-bg.png" />
+    <Content Include="App_Themes\Panel\images\booking\doctors-booking-btn.png" />
+    <Content Include="App_Themes\Panel\images\booking\doctors-btn.png" />
+    <Content Include="App_Themes\Panel\images\booking\dr-1.jpg" />
+    <Content Include="App_Themes\Panel\images\booking\dr-id-photo-1.jpg" />
+    <Content Include="App_Themes\Panel\images\booking\exit-btn.png" />
+    <Content Include="App_Themes\Panel\images\booking\help-btn.png" />
+    <Content Include="App_Themes\Panel\images\booking\help.png" />
+    <Content Include="App_Themes\Panel\images\booking\home_btn.jpg" />
+    <Content Include="App_Themes\Panel\images\booking\location-btn.png" />
+    <Content Include="App_Themes\Panel\images\booking\login\enter.png" />
+    <Content Include="App_Themes\Panel\images\booking\login\lock.png" />
+    <Content Include="App_Themes\Panel\images\booking\login\title.png" />
+    <Content Include="App_Themes\Panel\images\booking\login\user.png" />
+    <Content Include="App_Themes\Panel\images\booking\logo.png" />
+    <Content Include="App_Themes\Panel\images\booking\menu-items-bg.png" />
+    <Content Include="App_Themes\Panel\images\booking\patients-booking-btn.png" />
+    <Content Include="App_Themes\Panel\images\booking\patt.png" />
+    <Content Include="App_Themes\Panel\images\booking\profile-btn.png" />
+    <Content Include="App_Themes\Panel\images\booking\role-btn.png" />
+    <Content Include="App_Themes\Panel\images\booking\skill-btn.png" />
+    <Content Include="App_Themes\Panel\images\booking\test.jpg" />
+    <Content Include="App_Themes\Panel\images\booking\toolbox-icon-1.png" />
+    <Content Include="App_Themes\Panel\images\booking\toolbox-icon-2.png" />
+    <Content Include="App_Themes\Panel\images\booking\toolbox-icon-3.png" />
+    <Content Include="App_Themes\Panel\images\booking\user-with-role-btn.png" />
+    <Content Include="App_Themes\Panel\images\booking\users-btn.png" />
+    <Content Include="App_Themes\Panel\images\booking\users-edit-btn.png" />
+    <Content Include="App_Themes\Panel\images\booking\wrapper-bg.png" />
+    <Content Include="App_Themes\Panel\images\clear-btn.png" />
+    <Content Include="App_Themes\Panel\images\new-btn.png" />
+    <Content Include="App_Themes\Panel\images\search-btn.png" />
+    <Content Include="App_Themes\Panel\images\select-btn.png" />
+    <Content Include="App_Themes\Panel\images\sort-btn.png" />
+    <Content Include="App_Themes\Panel\js\dropdown.js" />
+    <Content Include="App_Themes\Panel\js\jquery-1.10.1.min.js" />
+    <Content Include="App_Themes\Panel\js\jquery-1.5.1.min.js" />
+    <Content Include="App_Themes\Panel\js\jquery.icheck.min.js" />
+    <Content Include="App_Themes\Panel\js\modernizr.custom.79639.js" />
+    <Content Include="App_Themes\Panel\js\modernizr.js" />
+    <Content Include="App_Themes\Panel\js\zepto.icheck.min.js" />
+    <Content Include="App_Themes\Panel\login\enter.png" />
+    <Content Include="App_Themes\Panel\login\lock.png" />
+    <Content Include="App_Themes\Panel\login\login.png" />
+    <Content Include="App_Themes\Panel\login\modernizr.js" />
+    <Content Include="App_Themes\Panel\login\patt.png" />
+    <Content Include="App_Themes\Panel\login\register.png" />
+    <Content Include="App_Themes\Panel\login\title.png" />
+    <Content Include="App_Themes\Panel\login\user.png" />
+    <Content Include="csslint.xml" />
+    <Content Include="Default.aspx" />
+    <Content Include="dll\CKEditor.NET.dll" />
+    <Content Include="dll\Heidarpour.WebControlUI.dll" />
+    <Content Include="dll\PersianDateControls 2.0.dll" />
+    <Content Include="Exception\ExceptionHandler.aspx" />
+    <Content Include="FatalError.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Files\Blog\Images\47210753-Flat-line-design-of-web-banner-template-with-outline-icons-of-building-industry-construction-process-Stock-Vector.jpg" />
+    <Content Include="Files\Blog\Images\NoImage.png" />
+    <Content Include="Files\News\Files\12.txt" />
+    <Content Include="Files\News\Images\6\خبر_جدید_6_عکس_خبر_.jpg" />
+    <Content Include="Files\Photo\6\3\Thumbnails\_625_عکس_آلبوم_.jpg" />
+    <Content Include="Files\Photo\6\3\Thumbnails\آلبوم شماره یک و دو_39_عکس_آلبوم_.jpg" />
+    <Content Include="Files\Photo\6\3\Thumbnails\آلبوم شماره یک و دو_842_عکس_آلبوم_.jpg" />
+    <Content Include="Files\Photo\6\3\آلبوم شماره یک و دو_842_عکس_آلبوم_.jpg" />
+    <Content Include="Files\Program\Images\project01.png" />
+    <Content Include="Files\Program\Images\project02.png" />
+    <Content Include="Files\Program\Images\project03.png" />
+    <Content Include="Files\Program\Images\project04.png" />
+    <Content Include="Files\School\Banners\6\ابن_سینا_6_بنر_مدرسه_.jpg" />
+    <Content Include="Files\School\Banners\6\ابوریحان_بیرونی_6_بنر_مدرسه_.jpg" />
+    <Content Include="Files\School\Banners\6\ابوریحان_بیرونی_6_بنر_مدرسه_.png" />
+    <Content Include="Files\School\Logos\6\ابوریحان_بیرونی_6_عکس_مدرسه_.jpg" />
+    <Content Include="Files\Slider\slider1.png" />
+    <Content Include="Files\Slider\slider2.png" />
+    <Content Include="Files\Slider\slider3.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Role\Guest\Common\Blog.aspx" />
+    <Content Include="Role\Guest\Common\Contact.aspx" />
+    <Content Include="Role\Guest\Common\DynamicPage.aspx" />
+    <Content Include="Role\Guest\Common\News.aspx" />
+    <Content Include="Role\Guest\Common\Photo.aspx" />
+    <Content Include="Role\Guest\Common\PhotoIn.aspx" />
+    <Content Include="Role\Guest\Common\Work.aspx" />
+    <Content Include="Role\Guest\School\Information.aspx" />
+    <Content Include="Role\Guest\School\SearchResult.aspx" />
+    <Content Include="Role\User\Administrator\Roles\CreateUserWizardWithRoles.aspx" />
+    <Content Include="Role\User\Administrator\Roles\Role.aspx" />
+    <Content Include="Role\User\Administrator\Roles\RoleBasedAuthorization.aspx" />
+    <Content Include="Role\User\Administrator\Roles\UsersAndRoles.aspx" />
+    <Content Include="Role\User\Administrator\User.aspx" />
+    <Content Include="Role\User\Blog.aspx" />
+    <Content Include="Role\User\Default.aspx" />
+    <Content Include="Role\User\DynamicPage.aspx" />
+    <Content Include="Role\User\Manager\School.aspx" />
+    <Content Include="Role\User\News.aspx" />
+    <Content Include="Role\User\PhotoCategory.aspx" />
+    <Content Include="Role\User\Slider.aspx" />
+    <Content Include="Role\User\Work.aspx" />
+    <Content Include="Role\User\‍Photo.aspx" />
+    <Content Include="Script\Common\default.js" />
+    <Content Include="Script\School\information.js" />
+    <Content Include="Script\School\school.js" />
+    <Content Include="UnauthorizedAccess.aspx" />
+    <Content Include="UserControl\Common\BlogItem.ascx" />
+    <Content Include="UserControl\Common\DynamicPage.ascx" />
+    <Content Include="UserControl\Common\MenuItem.ascx" />
+    <Content Include="UserControl\Common\Other\CKEditor.ascx" />
+    <Content Include="UserControl\School\Filter.ascx" />
+    <Content Include="UserControl\School\Item.ascx" />
+    <Content Include="UserControl\School\Summary.ascx" />
+    <Content Include="Web1.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePasswordSuccess.aspx.designer.cs">
+      <DependentUpon>ChangePasswordSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPage\DefaultMasterPage.master.designer.cs">
+      <DependentUpon>DefaultMasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPage\PanelMasterPage.master.designer.cs">
+      <DependentUpon>PanelMasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPage\SchoolMasterPage.master.designer.cs">
+      <DependentUpon>SchoolMasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Exception\ExceptionHandler.aspx.designer.cs">
+      <DependentUpon>ExceptionHandler.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FatalError.aspx.designer.cs">
+      <DependentUpon>FatalError.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Old_App_Code\ProfileCommon.cs" />
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\Guest\Common\Blog.aspx.designer.cs">
+      <DependentUpon>Blog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\Guest\Common\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\Guest\Common\DynamicPage.aspx.designer.cs">
+      <DependentUpon>DynamicPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\Guest\Common\News.aspx.designer.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\Guest\Common\Photo.aspx.designer.cs">
+      <DependentUpon>Photo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\Guest\Common\PhotoIn.aspx.designer.cs">
+      <DependentUpon>PhotoIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\Guest\Common\Work.aspx.designer.cs">
+      <DependentUpon>Work.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\Guest\School\Information.aspx.designer.cs">
+      <DependentUpon>Information.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\Guest\School\SearchResult.aspx.designer.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\User\Administrator\Roles\CreateUserWizardWithRoles.aspx.designer.cs">
+      <DependentUpon>CreateUserWizardWithRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\User\Administrator\Roles\Role.aspx.designer.cs">
+      <DependentUpon>Role.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\User\Administrator\Roles\RoleBasedAuthorization.aspx.designer.cs">
+      <DependentUpon>RoleBasedAuthorization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\User\Administrator\Roles\UsersAndRoles.aspx.designer.cs">
+      <DependentUpon>UsersAndRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\User\Administrator\User.aspx.designer.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\User\Blog.aspx.designer.cs">
+      <DependentUpon>Blog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\User\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\User\DynamicPage.aspx.designer.cs">
+      <DependentUpon>DynamicPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\User\Manager\School.aspx.designer.cs">
+      <DependentUpon>School.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\User\News.aspx.designer.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\User\PhotoCategory.aspx.designer.cs">
+      <DependentUpon>PhotoCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\User\Slider.aspx.designer.cs">
+      <DependentUpon>Slider.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\User\Work.aspx.designer.cs">
+      <DependentUpon>Work.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\User\‍Photo.aspx.designer.cs">
+      <DependentUpon>‍Photo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UnauthorizedAccess.aspx.designer.cs">
+      <DependentUpon>UnauthorizedAccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Common\BlogItem.ascx.cs">
+      <DependentUpon>BlogItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Common\BlogItem.ascx.designer.cs">
+      <DependentUpon>BlogItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Common\DynamicPage.ascx.cs">
+      <DependentUpon>DynamicPage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Common\DynamicPage.ascx.designer.cs">
+      <DependentUpon>DynamicPage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Common\MenuItem.ascx.cs">
+      <DependentUpon>MenuItem.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Common\MenuItem.ascx.designer.cs">
+      <DependentUpon>MenuItem.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\Common\Other\CKEditor.ascx.cs">
+      <DependentUpon>CKEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\Common\Other\CKEditor.ascx.designer.cs">
+      <DependentUpon>CKEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\School\Filter.ascx.cs">
+      <DependentUpon>Filter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\School\Filter.ascx.designer.cs">
+      <DependentUpon>Filter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\School\Item.ascx.cs">
+      <DependentUpon>Item.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\School\Item.ascx.designer.cs">
+      <DependentUpon>Item.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\School\Summary.ascx.cs">
+      <DependentUpon>Summary.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Old_App_Code\BaseMasterPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Old_App_Code\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Old_App_Code\DynamicSiteMapProvider.cs" />
+    <Compile Include="App_MasterPage\DefaultMasterPage.master.cs">
+      <DependentUpon>DefaultMasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPage\PanelMasterPage.master.cs">
+      <DependentUpon>PanelMasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPage\SchoolMasterPage.master.cs">
+      <DependentUpon>SchoolMasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Exception\ExceptionHandler.aspx.cs">
+      <DependentUpon>ExceptionHandler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FatalError.aspx.cs">
+      <DependentUpon>FatalError.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\Guest\Common\Blog.aspx.cs">
+      <DependentUpon>Blog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\Guest\Common\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\Guest\Common\DynamicPage.aspx.cs">
+      <DependentUpon>DynamicPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\Guest\Common\News.aspx.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\Guest\Common\Photo.aspx.cs">
+      <DependentUpon>Photo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\Guest\Common\PhotoIn.aspx.cs">
+      <DependentUpon>PhotoIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\Guest\Common\Work.aspx.cs">
+      <DependentUpon>Work.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\Guest\School\Information.aspx.cs">
+      <DependentUpon>Information.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\Guest\School\SearchResult.aspx.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\User\Administrator\Roles\CreateUserWizardWithRoles.aspx.cs">
+      <DependentUpon>CreateUserWizardWithRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\User\Administrator\Roles\Role.aspx.cs">
+      <DependentUpon>Role.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\User\Administrator\Roles\RoleBasedAuthorization.aspx.cs">
+      <DependentUpon>RoleBasedAuthorization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\User\Administrator\Roles\UsersAndRoles.aspx.cs">
+      <DependentUpon>UsersAndRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\User\Administrator\User.aspx.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\User\Blog.aspx.cs">
+      <DependentUpon>Blog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\User\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\User\DynamicPage.aspx.cs">
+      <DependentUpon>DynamicPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\User\Manager\School.aspx.cs">
+      <DependentUpon>School.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\User\News.aspx.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\User\PhotoCategory.aspx.cs">
+      <DependentUpon>PhotoCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\User\Slider.aspx.cs">
+      <DependentUpon>Slider.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\User\Work.aspx.cs">
+      <DependentUpon>Work.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\User\‍Photo.aspx.cs">
+      <DependentUpon>‍Photo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UnauthorizedAccess.aspx.cs">
+      <DependentUpon>UnauthorizedAccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\School\Summary.ascx.designer.cs">
+      <DependentUpon>Summary.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Files\Blog\Files\" />
+    <Folder Include="Files\Footer\Images\" />
+    <Folder Include="Files\Question\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\App_LocalResources\ChangePassword.aspx.resx" />
+    <Content Include="Account\App_LocalResources\Register.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{f83bdaf9-7584-4a73-aabe-72b38c75f94f}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{3464604c-1457-43b8-a40e-64b0698b17de}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Provider\Provider.csproj">
+      <Project>{bc2f4574-ccf3-4f7f-a219-07af8c5a36ab}</Project>
+      <Name>Provider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{782b5e25-f3b2-48ef-9c7f-91f35942fb99}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>11122</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:11122/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

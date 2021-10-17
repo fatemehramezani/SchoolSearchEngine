@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="MasterPages.SchoolMasterPage" Codebehind="SchoolMasterPage.master.cs" %>
+<%@ Register Src="~/UserControl/Common/DynamicPage.ascx" TagName="DynamicPage" TagPrefix="UserControl" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    
+    <title><%=PageTitle %></title>
+    <meta id="keywords" name="keywords" runat="server" content="<%#PageKeywords %>" />
+    <meta id="description" name="description" runat="server" content="<%#PageDescription %>" />
+
+    <link rel="shortcut icon" href="../App_Themes/Default/images/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="../App_Themes/Default/style.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../App_Themes/Default/css/view.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../App_Themes/Default/type/marketdeco.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../App_Themes/Default/type/merriweather.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../App_Themes/Default/css/queries.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="../App_Themes/Default/css/font.css" media="all" />
+
+    <link href="../App_Themes/Default/bootstrap/css/bootstrap.3.3.5.min.css" rel="stylesheet" />
+    <link href="../App_Themes/Default/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <link href="../App_Themes/Default/bootstrap/css/icon.min.css" rel="stylesheet" />
+    <link href="../App_Themes/Default/bootstrap/css/hovereffect.css" rel="stylesheet" />
+
+    <!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="../App_Themes/Default/css/ie8.css" media="all" />
+<![endif]-->
+    <!--[if IE 9]>
+<link rel="stylesheet" type="text/css" href="../App_Themes/Default/css/ie9.css" media="all" />
+<![endif]-->
+    <script type="text/javascript" src="../App_Themes/Default/js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="../App_Themes/Default/js/ddsmoothmenu.js"></script>
+    <script type="text/javascript" src="../App_Themes/Default/js/html5.js"></script>
+    <script type="text/javascript" src="../App_Themes/Default/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="../App_Themes/Default/js/selectnav.js"></script>
+    <script type="text/javascript" src="../App_Themes/Default/js/twitter.min.js"></script>
+
+    <!-- js-Slider-->
+    <script src="../App_Themes/Default/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../App_Themes/Default/js/jquery.prettyPhoto.js" type="text/javascript"></script>
+    <script src="../App_Themes/Default/js/jquery.nicescroll.min.js" type="text/javascript"></script>
+    <script src="../App_Themes/Default/js/superfish.min.js" type="text/javascript"></script>
+    <script src="../App_Themes/Default/js/jquery.flexslider-min.js" type="text/javascript"></script>
+    <script src="../App_Themes/Default/js/owl.carousel.js" type="text/javascript"></script>
+    <script src="../App_Themes/Default/js/animate.js" type="text/javascript"></script>
+    <script src="../App_Themes/Default/js/myscript.js" type="text/javascript"></script>
+    <style>
+        .navbar 
+            {
+                margin-top:0px !important;
+            }
+    </style>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+
+<body dir="rtl">
+    School
+    <form id="Form1" runat="server">
+            <div id="wrapper">
+                <!--Header-->
+                <UserControl:DynamicPage runat="server" Name="SchoolHeader" />
+                <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+            <!--Footer-->
+            <UserControl:DynamicPage runat="server" Name="SchoolFooter" />
+    </form>
+</body>
+</html>

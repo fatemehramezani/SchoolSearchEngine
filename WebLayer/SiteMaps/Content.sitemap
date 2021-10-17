@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="" title="صفحه اصلی">
+    <siteMapNode url="~/Role/User/Slider.aspx" title="اسلایدر" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Role/USer/AboutUs.aspx" title="درباره ما" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Role/User/Photo.aspx" title="گالری" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Role/User/Blog.aspx" title="بلاگ" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Role/User/contactUs.aspx" title="تماس" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Account/Profile.aspx" title="پروفایل" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Logout.aspx" title="خروج" description="~/App_Themes/Default/images/booking/exit-btn.png" />
+  </siteMapNode>
+</siteMap>
+
+
+
+

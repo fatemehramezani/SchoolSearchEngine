@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="87d28cd0871d4b56a373d792152c05a2" Name="Diagram1" ZoomLevel="99">
+        <EntityTypeShape EntityType="DataModel.Common" Width="1.5" PointX="0.75" PointY="2.875" />
+        <EntityTypeShape EntityType="DataModel.ExceptionHandler" Width="1.5" PointX="5.75" PointY="10.875" />
+        <EntityTypeShape EntityType="DataModel.Feature" Width="1.5" PointX="7.75" PointY="10.875" />
+        <EntityTypeShape EntityType="DataModel.FileType" Width="1.5" PointX="9.75" PointY="10.875" />
+        <EntityTypeShape EntityType="DataModel.Location" Width="1.5" PointX="0.75" PointY="7" />
+        <EntityTypeShape EntityType="DataModel.NoSelection" Width="1.5" PointX="10.75" PointY="1.875" />
+        <EntityTypeShape EntityType="DataModel.PhotoCategory" Width="1.5" PointX="8.25" PointY="6.625" />
+        <EntityTypeShape EntityType="DataModel.Advertise" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="DataModel.Blog" Width="1.5" PointX="8.25" PointY="2.5" />
+        <EntityTypeShape EntityType="DataModel.DynamicPage" Width="1.5" PointX="3" PointY="31.625" />
+        <EntityTypeShape EntityType="DataModel.News" Width="1.5" PointX="5.25" PointY="6.375" />
+        <EntityTypeShape EntityType="DataModel.Paper" Width="1.5" PointX="3" PointY="35.125" />
+        <EntityTypeShape EntityType="DataModel.Photo" Width="1.5" PointX="10.5" PointY="7" />
+        <EntityTypeShape EntityType="DataModel.Question" Width="1.5" PointX="3" PointY="13" />
+        <EntityTypeShape EntityType="DataModel.Work" Width="1.5" PointX="11.75" PointY="10.875" />
+        <EntityTypeShape EntityType="DataModel.Information" Width="1.5" PointX="3" PointY="4.125" />
+        <EntityTypeShape EntityType="DataModel.Applicant" Width="1.5" PointX="0.75" PointY="11.375" />
+        <EntityTypeShape EntityType="DataModel.Application" Width="1.5" PointX="1.5" PointY="28.25" />
+        <EntityTypeShape EntityType="DataModel.Profile" Width="1.5" PointX="3.75" PointY="16.5" />
+        <EntityTypeShape EntityType="DataModel.Role" Width="1.5" PointX="1.5" PointY="25.5" />
+        <EntityTypeShape EntityType="DataModel.User" Width="1.5" PointX="1.5" PointY="17.375" />
+        <EntityTypeShape EntityType="DataModel.MainSiteBlog" Width="1.5" PointX="12.75" PointY="1.875" />
+        <EntityTypeShape EntityType="DataModel.MainSiteNews" Width="1.5" PointX="12.75" PointY="5.875" />
+        <EntityTypeShape EntityType="DataModel.MainSitePhotoCategory" Width="1.5" PointX="5.75" PointY="13.875" />
+        <AssociationConnector Association="DataModel.FK_Common_Parent" />
+        <AssociationConnector Association="DataModel.FK_Information_Common_Gender" />
+        <AssociationConnector Association="DataModel.FK_Information_Common_Section" />
+        <AssociationConnector Association="DataModel.FK_Information_Common_Type" />
+        <AssociationConnector Association="DataModel.FK_Information_City" />
+        <AssociationConnector Association="DataModel.FK_Information_Provience" />
+        <AssociationConnector Association="DataModel.FK_Information_Region" />
+        <AssociationConnector Association="DataModel.FK_Photo_PhotoCategory" />
+        <AssociationConnector Association="DataModel.FK_PhotoCategory_Applicant" />
+        <AssociationConnector Association="DataModel.FK_PhotoCategory_Information" />
+        <AssociationConnector Association="DataModel.FK_Advertise_Applicant" />
+        <AssociationConnector Association="DataModel.FK_Blog_Applicant" />
+        <AssociationConnector Association="DataModel.FK_Blog_Information" />
+        <AssociationConnector Association="DataModel.FK_DynamicPage_DynamicPage" />
+        <AssociationConnector Association="DataModel.FK_News_Applicant" />
+        <AssociationConnector Association="DataModel.FK_News_News" />
+        <AssociationConnector Association="DataModel.FK_Paper_Applicant" />
+        <AssociationConnector Association="DataModel.FK_Question_Applicant" />
+        <AssociationConnector Association="DataModel.FK_Information_Applicant" />
+        <AssociationConnector Association="DataModel.FK_Applicant_User" />
+        <AssociationConnector Association="DataModel.FK_Role_Application" />
+        <AssociationConnector Association="DataModel.FK_User_Application" />
+        <AssociationConnector Association="DataModel.FK_Profile_User" />
+        <AssociationConnector Association="DataModel.UsersInRole" />
+        <EntityTypeShape EntityType="DataModel.Teacher" Width="1.5" PointX="5.25" PointY="1.75" />
+        <AssociationConnector Association="DataModel.FK_Teacher_Information" />
+        <AssociationConnector Association="DataModel.FK_Teacher_Applicant" />
+        <EntityTypeShape EntityType="DataModel.Student" Width="1.5" PointX="8.25" PointY="13.75" />
+        <AssociationConnector Association="DataModel.FK_Student_Information" />
+        <AssociationConnector Association="DataModel.FK_Student_Applicant" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

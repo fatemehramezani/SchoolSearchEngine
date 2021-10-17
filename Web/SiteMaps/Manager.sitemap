@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="" title="صفحه اصلی">
+    <siteMapNode url="~/Account/Profile.aspx" title="پروفایل" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Role/User/Manager/School.aspx" title="مدارس" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Role/User/PhotoCategory.aspx" title="تصاویر" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Role/User/Blog.aspx" title="بلاگ" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Role/User/News.aspx" title="اخبار" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Role/User/Manager/Teacher.aspx" title="کادر آموزشی" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Role/User/Manager/Student.aspx" title="دانش آموزان برتر" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Account/ChangePassword.aspx" title="تغییر کلمه عبور" description="~/App_Themes/Default/images/booking/change-password-btn.png"/>
+    <siteMapNode url="~/Logout.aspx" title="خروج" description="~/App_Themes/Default/images/booking/exit-btn.png" />
+  </siteMapNode>
+</siteMap>
+
+
+
+

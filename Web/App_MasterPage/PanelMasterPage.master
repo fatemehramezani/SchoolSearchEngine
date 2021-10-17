@@ -1,0 +1,228 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="PanelMasterPage.master.cs" EnableTheming="true" Inherits="MasterPages.PanelMasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>موتور جستجوی مدرسه یاب|جستجوی مدارس غیر دولتی و خصوصی</title>
+    <link href="../App_Themes/Panel/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Panel/css/menu.css" rel="stylesheet" type="text/css" />
+    <link href="../App_Themes/Panel/css/B_Roya.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../App_Themes/Panel/js/jquery-1.10.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    
+    <link href="../App_Themes/Default/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../App_Themes/Default/bootstrap/css/bootstrap-rtl.min.css" rel="stylesheet" />
+    <link href="../App_Themes/Default/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    <script>
+        /* <![CDATA[ */
+        $(function () {
+            var input = document.createElement("input");
+            if (('placeholder' in input) == false) {
+                $('[placeholder]').focus(function () {
+                    var i = $(this);
+                    if (i.val() == i.attr('placeholder')) {
+                        i.val('').removeClass('placeholder');
+                        if (i.hasClass('password')) {
+                            i.removeClass('password');
+                            this.type = 'password';
+                        }
+                    }
+                }).blur(function () {
+                    var i = $(this);
+                    if (i.val() == '' || i.val() == i.attr('placeholder')) {
+                        if (this.type == 'password') {
+                            i.addClass('password');
+                            this.type = 'text';
+                        }
+                        i.addClass('placeholder').val(i.attr('placeholder'));
+                    }
+                }).blur().parents('form').submit(function () {
+                    $(this).find('[placeholder]').each(function () {
+                        var i = $(this);
+                        if (i.val() == i.attr('placeholder'))
+                            i.val('');
+                    })
+                });
+            }
+        });
+        /* ]]> */
+
+    </script>
+    <script lang="jv" type="text/javascript">
+        function SelectItem(sender, arg) {
+            alert('h');
+            document.getElementById(sender.id).isvalid = false;
+            args.IsValid = (args.Value.toString() != "" && args.Value.toString() != "-1" && args.Value.toString() != "0");
+            return args.IsValid;
+        }
+    </script>    
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+
+<body dir="rtl">
+    <form id="Form1" runat="server">    
+              <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+        <div id="panel_wrapper">
+            <div id="col_right">
+                <a href="Default.aspx">
+                    <div id="home_btn" ></div>
+                </a>
+                <div id="logo">
+                    <div id="logo_inside">در اینجا می توانید تنظیمات مربوط به سامانه اینترنتی شرکت مدرسه یاب را ویرایش کنید.</div>
+                </div>
+                <div id="cssmenu">
+                    <asp:Repeater runat="server" ID="MenuRepeater" DataSourceID="UserSiteMapDataSource">
+                        <HeaderTemplate>
+                            <ul>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                            <li>
+                                <%--class='<%# ((SiteMapNode)Container.DataItem).ChildNodes.Count > 0 :"has-sub":string.Empty%>'--%>
+                                <a href='<%# Eval("url") %>'><span><%# Eval("title") %></span></a>
+                                <asp:Repeater ID="SubRepeater" runat="server" DataSource='<%# ((SiteMapNode)Container.DataItem).ChildNodes  %>'>
+                                    <HeaderTemplate>
+                                        <ul>
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <li>
+                                            <a href='<%# Eval("url") %>'><span><%# Eval("title") %></span></a>
+                                        </li>
+                                    </ItemTemplate>
+                                    <FooterTemplate>
+                                        </ul>
+                                    </FooterTemplate>
+                                </asp:Repeater>
+                            </li>
+                        </ItemTemplate>
+                        <FooterTemplate>
+                            </ul>
+                        </FooterTemplate>
+                    </asp:Repeater>
+                    <asp:SiteMapDataSource ID="UserSiteMapDataSource" runat="server" ShowStartingNode="false" />
+                </div>
+            </div>
+            <div id="col_left">
+                <div id="head">
+                    <%--   <div id="help_btn"></div>--%>
+                    <div id="clock">
+                        <script>
+                            var today = new Date();
+                            switch (today.getDay()) {
+                                case 1:
+                                    document.write("دوشنبه");
+                                    break;
+                                case 2:
+                                    document.write("سه شنبه");
+                                    break;
+                                case 3:
+                                    document.write("چهارشنبه");
+                                    break;
+                                case 4:
+                                    document.write("پنج شنبه");
+                                    break;
+                                case 5:
+                                    document.write("جمعه");
+                                    break;
+                                case 6:
+                                    document.write("شنبه");
+                                    break;
+                                default:
+                                    document.write("یکشنبه");
+                                    break;
+                            }
+                            var dArray;
+                            dArray = getTodayPersian()
+                            document.write(" " + dArray[2] + " ");
+                            switch (dArray[1]) {
+                                case 1:
+                                    document.write(" فروردین ");
+                                    document.write(dArray[0]);
+                                    break;
+                                case 2:
+                                    document.write(" اردیبهشت ");
+                                    document.write(dArray[0]);
+                                    break;
+                                case 3:
+                                    document.write(" خرداد ");
+                                    document.write(dArray[0]);
+                                    break;
+                                case 4:
+                                    document.write(" تیر ");
+                                    document.write(dArray[0]);
+                                    break;
+                                case 5:
+                                    document.write(" مرداد ");
+                                    document.write(dArray[0]);
+                                    break;
+                                case 6:
+                                    document.write(" شهریور ");
+                                    document.write(dArray[0]);
+                                    break;
+                                case 7:
+                                    document.write(" مهر ");
+                                    document.write(dArray[0]);
+                                    break;
+                                case 8:
+                                    document.write(" آبان ");
+                                    document.write(dArray[0]);
+                                    break;
+                                case 9:
+                                    document.write(" آذر ");
+                                    document.write(dArray[0]);
+                                    break;
+                                case 10:
+                                    document.write(" دی ");
+                                    document.write(dArray[0]);
+                                    break;
+                                case 11:
+                                    document.write(" بهمن ");
+                                    document.write(dArray[0]);
+                                    break;
+                                default:
+                                    document.write(" اسفند ");
+                                    document.write(dArray[0]);
+                                    break;
+                            }
+                        </script>
+                        <script type="text/javascript">
+                            var currentTime = new Date()
+                            var hours = currentTime.getHours()
+                            var minutes = currentTime.getMinutes()
+                            if (minutes < 10) {
+                                minutes = "0" + minutes
+                            }
+                            var seconds = currentTime.getMinutes()
+                            if (seconds < 10) {
+                                seconds = "0" + seconds
+                            }
+                            document.write("<br/>" + hours + ":" + minutes + ":" + seconds)
+                        </script>
+
+                    </div>
+                </div>
+                <div id="content">
+                    <h1>
+                        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+                    </h1>
+                    <div id="booking_vars">
+                        <div id="vars_header">
+                            <div id="vars_header_right">
+                                <h2>توضیحات</h2>
+                                <h3>
+                                    <asp:ContentPlaceHolder ID="DescriptionContent" runat="server" />
+                                </h3>
+                            </div>
+                            <%--<asp:ImageButton runat="server" ID="HelpImageButton" SkinID="HelpImageButton" AlternateText="" />--%>
+                        </div>
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                    </div>
+                </div>
+            </div>
+            <div id="footer_container">
+                <div id="footer">Powered by Behsaz Rayaneh Rasam Co. 2020 all rights reserved</div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

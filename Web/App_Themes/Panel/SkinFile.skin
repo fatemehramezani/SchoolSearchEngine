@@ -1,0 +1,58 @@
+﻿<%--PersianDateTextBox--%>
+<pdc:PersianDateTextBox runat="server" PickerDirection="ToRight" ShowPickerOnEvent="None" ShowPickerOnTop="True" IconUrl="images/booking/calendar-icon.png"/>
+
+<%--PersianDateScriptManager--%>
+<pdc:PersianDateScriptManager runat="server"  CalendarCSS="PickerCalendarCSS" FooterCSS="PickerFooterCSS" ForbidenCSS="PickerForbidenCSS" FrameCSS="PickerCSS" HeaderCSS="PickerHeaderCSS" SelectedCSS="PickerSelectedCSS" WeekDayCSS="PickerWeekDayCSS" WorkDayCSS="PickerWorkDayCSS" WeekDaysName="'ش','ی','د','س','چ','پ','ج'" CalendarDayWidth="30"/>
+
+<%--ImageButtons--%>
+<asp:ImageButton SkinID="PanelSelectImageButton" ImageUrl="images/select-btn.png"  runat="server" ToolTip="انتخاب رکورد جاری" Width="20px" Height="20px" />
+<asp:HyperLink SkinID="PanelFilesHyperLink" ImageUrl="images/select-btn.png"  runat="server" ToolTip="اضافه کردن تصویر" Width="20px" Height="20px" />
+<asp:ImageButton SkinID="PanelAddImageButton" ImageUrl="images/new-btn.png"  runat="server" ToolTip="اضافه کردن رکورد جدید" Width="25px" Height="25px" />
+<asp:ImageButton SkinID="PanelSearchImageButton" ImageUrl="images/search-btn.png"  runat="server" ToolTip="جستجو" Width="25px" Height="25px" />
+<asp:ImageButton SkinID="PanelSortImageButton" ImageUrl="images/sort-btn.png"  runat="server" ToolTip="مرتب سازی" Width="25px" Height="25px" />
+<asp:ImageButton SkinID="PanelClearImageButton" ImageUrl="images/clear-btn.png"  runat="server" ToolTip="حذف فیلترهای جستجو" Width="25px" Height="25px" />
+<asp:ImageButton SkinID="LoginButton" runat="server" ImageUrl="login/login.png"/>
+
+<%--Label--%>
+<asp:Label runat="server" SkinID="Description" Width="250px" />
+<asp:Label runat="server" SkinID="Caption" Width="100px" CssClass="speciallable"/>
+<asp:Label runat="server" Width="90%"  CssClass="speciallable"/>
+
+<%--GridViews--%>
+<asp:GridView runat="server" CellPadding="5" EmptyDataText="رکوردی جهت نمایش وجود ندارد"
+  HorizontalAlign="Center"  Font-Names="BRoya" ForeColor="#333333" GridLines="None" Font-Bold="True" PageSize="5" Font-Size="12" CssClass="gridcontainer" >   
+                    <AlternatingRowStyle BackColor="#EBEBEB" ForeColor="#333333" />
+                    <EditRowStyle BackColor="#999999" />
+                    <FooterStyle BackColor="#096B95" ForeColor="White" />
+                    <HeaderStyle  BackColor="#2ab0e9" ForeColor="White"  HorizontalAlign="Right" VerticalAlign="Middle" />
+                    <PagerStyle BackColor="#e4e4e4" Font-Size="10"  Height="20px" ForeColor="#6a6a6a" HorizontalAlign="Center" />
+                    <RowStyle BackColor="White" ForeColor="#284775"  HorizontalAlign="Center" VerticalAlign="Middle" />
+                    <SelectedRowStyle BackColor="#E2DED6" ForeColor="#333333" HorizontalAlign="Center" VerticalAlign="Middle" />                 
+                    <SortedAscendingHeaderStyle BackColor="#096B95" ForeColor="White"/>
+                    <SortedDescendingHeaderStyle BackColor="#096B95" ForeColor="White"/>
+</asp:GridView>
+
+<%--FormView--%>
+<asp:FormView runat="server" CellPadding="5" EmptyDataText="</br>رکوردی جهت نمایش وجود ندارد<br/>" CssClass="formcontainer"  > 
+    <FooterStyle BackColor="#2ab0e9" Font-Bold="True" ForeColor="#003282" />
+    <PagerStyle BackColor="#2ab0e9" ForeColor="003282" HorizontalAlign="Center" />
+    <HeaderStyle BackColor="#2ab0e9" Font-Bold="True" ForeColor="White" />
+</asp:FormView>
+
+<%--DropDown--%>
+<asp:DropDownList runat="server" SkinID="FormDropDownList" CssClass="form-control dropdown" Font-Names="BYekan"  Width="130px" Height="24px" />
+<asp:DropDownList runat="server" SkinID="GridDropDownList"  CssClass="form-control dropdown" Font-Names="BYekan" Width="110px" Height="24px"/>
+<asp:DropDownList runat="server" SkinID="SearchDropDownList" CssClass="form-control dropdown" Font-Names="BYekan"  Width="120px" Height="24px"/>
+<asp:DropDownList runat="server" CssClass="form-control dropdown" Font-Names="BYekan"  Width="200px" Height="24px"/>                                
+
+
+<%--TextBox--%>
+<asp:TextBox runat="server" SkinID="Description" CssClass="form-control ui-autocomplete-input"  Width="90%" />
+<asp:TextBox runat="server" SkinID="TinyDescription" Width="220px" CssClass="form-control ui-autocomplete-input" />
+<asp:TextBox runat="server" SkinID="TextBox"  Width="140px" CssClass="form-control ui-autocomplete-input" />
+<asp:TextBox runat="server" SkinID="TextBox300"  Width="300px" CssClass="form-control ui-autocomplete-input" />
+<asp:TextBox runat="server" Width="90%" Font-Names="BYekan" CssClass="form-control ui-autocomplete-input"/>
+<asp:TextBox runat="server" SkinID="NumberTextBox"  Width="80px" CssClass="form-control ui-autocomplete-input"  />
+
+<%-- Button--%>
+<asp:Button runat="server" CssClass="loginbutton" />

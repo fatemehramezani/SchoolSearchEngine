@@ -1,0 +1,161 @@
+﻿        body {
+            background-image: url(../../Panel/login/patt.png);
+            background-repeat: repeat;
+        }
+
+        :focus {
+            outline: 0;
+        }
+        #loginwrapper a:link {
+            color: #FFF;
+            text-decoration: none;
+        }
+
+        #loginwrapper a:visited {
+            text-decoration: none;
+            color: #FFF;
+        }
+
+        #loginwrapper a:hover {
+            text-decoration: none;
+            color: #007dbb;
+        }
+
+        #loginwrapper a:active {
+            text-decoration: none;
+            color: #FFF;
+        }
+
+        #loginwrapper {
+            height: 250px;
+            width: 300px;
+            margin-right: auto;
+            margin-left: auto;
+            padding-top: 50px;
+            padding-right: 25px;
+            padding-left: 25px;
+            background-color: #2ab0e9;
+            font-family: Tahoma, Geneva, sans-serif;
+            font-size: 20px;
+            color: #FFF;
+            direction: rtl;
+            margin-top: 150px;
+        }
+
+            #loginwrapper #input_wrapper input[type=text] {
+                margin-bottom: 10px;
+                margin-right: 5px;
+                padding-right: 50px;
+                border: 0px;
+                font-size: 16px;
+                width: 240px !important;
+                height: 40px;
+                clear: both;
+                background: rgba(255, 255, 255, 0.7) url(../../Panel/login/user.png);
+                background-repeat: no-repeat;
+                background-position: 210px center;
+                -webkit-transition: 0.4s linear !important;
+                -moz-transition: 0.4s linear !important;
+                -o-transition: 0.4s linear !important;
+                -ms-transition: 0.4s linear !important;
+                transition: 0.4s linear !important;
+                font-family: Arial,Tahoma, Geneva, sans-serif !important;
+            }
+
+                #loginwrapper #input_wrapper input[type=text]:hover, #loginwrapper input[type=text]:focus {
+                    -webkit-transition: 0.4s linear !important;
+                    -moz-transition: 0.4s linear !important;
+                    -o-transition: 0.4s linear !important;
+                    -ms-transition: 0.4s linear !important;
+                    transition: 0.4s linear !important;
+                    background-color: rgba(255, 255, 255, 1) !important;
+                }
+
+            #loginwrapper #input_wrapper input[type=password] {
+                margin-bottom: 10px;
+                margin-right: 5px;
+                padding-right: 50px;
+                border: 0px;
+                font-size: 16px;
+                width: 240px !important;
+                height: 40px;
+                clear: both;
+                background: rgba(255, 255, 255, 0.7) url(../../Panel/login/lock.png);
+                background-repeat: no-repeat;
+                background-position: 210px center;
+                -webkit-transition: 0.4s linear !important;
+                -moz-transition: 0.4s linear !important;
+                -o-transition: 0.4s linear !important;
+                -ms-transition: 0.4s linear !important;
+                transition: 0.4s linear !important;
+                font-family: Arial,Tahoma, Geneva, sans-serif !important;
+            }
+
+                #loginwrapper #input_wrapper input[type=password]:hover, #loginwrapper input[type=password]:focus {
+                    -webkit-transition: 0.4s linear !important;
+                    -moz-transition: 0.4s linear !important;
+                    -o-transition: 0.4s linear !important;
+                    -ms-transition: 0.4s linear !important;
+                    transition: 0.4s linear !important;
+                    background-color: rgba(255, 255, 255, 1) !important;
+                }
+
+        #bottom {
+            float: right;
+            height: 60px;
+            width: 270px;
+            margin-right: 5px;
+        }
+
+        #input_wrapper {
+            width: 240px;
+            clear: both;
+        }
+
+        #bottom_right {
+            float: right;
+            height: 60px;
+            width: 131px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        #bottom_left {
+            float: left;
+            height: 60px;
+            width: 131px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        #botton_right_one {
+            float: right;
+            margin-right: 25px;
+        }
+
+        #botton_right_two {
+            float: right;
+            margin-top: 5px;
+        }
+
+        #botton_right_three {
+            float: right;
+            margin-top: 3px;
+        }
+
+        .login-btn {
+            float: right;
+            height: 46px;
+            width: 109px;
+            background-image: url(../../Panel/login/enter.png);
+            background-repeat: no-repeat;
+            background-position: 0px 0px;
+            cursor: pointer;
+            border: none;
+        }
+
+            .login-btn:hover {
+                background-image: url(../../Panel/login/enter.png);
+                background-repeat: no-repeat;
+                background-position: 0px -46px;
+            }

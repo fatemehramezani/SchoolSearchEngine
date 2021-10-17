@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="DefaultMasterPage.master.cs" Inherits="MasterPages_DefaultMasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />        
+    <meta id="title" name="title" content="" enableviewstate="false" />
+    <meta id="keywords" name="keywords"  content=""/>
+    <meta id="description" name="description" content=""/>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+
+    <link rel="shortcut icon" href="../App_Themes/Default/images/favicon.png" />
+    
+    <script src='<%# ResolveUrl("~/Script/defaultscript.js") %>'></script>
+    <style type="text/css">
+        @import url("../../../Css/defaultcss.css");
+    </style>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />    
+</head>
+<body>
+    <form id="Form1" runat="server">
+        <asp:ScriptManager runat="server" ID="sc1" />
+        <!-- Menu -->
+        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+                    <div class="container">
+                        <div class="navbar-header page-scroll" style="visibility:hidden">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-main-collapse">
+                                <i class="fa fa-bars"></i>
+                            </button>                
+                            <a class="navbar-brand" href="مدرسه_یاب" style="padding-right: 150px;" title="مدرسه یاب" rel="home" >
+                                <img height="50" runat="server" src="../App_Themes/Default/images/logo.png" alt="مدرسه_یاب"/>
+                            </a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="navbar-collapse navbar-right navbar-main-collapse collapse" style="height: 0.666667px;">
+                            <ul class="nav navbar-nav" id="tiny">
+					            <asp:Repeater runat="server" ID="MenuRepeater" DataSourceID="UserSiteMapDataSource">
+                                    <ItemTemplate>
+                                            <UserControl:MenuItem runat="server" />                                        
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                                <asp:SiteMapDataSource ID="UserSiteMapDataSource" runat="server" ShowStartingNode="False" /> 
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.container -->
+                </nav>
+        <div id="page" class="hfeed">
+            <div id="wrapper">
+                <!-- #wrapper -->
+                <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+                <div id="main">
+                    <!-- #main -->
+                    <div id="primary">
+                        <!-- #primary -->
+                        <div id="content" role="main">
+                            <!-- #content -->
+                            <div class="container">
+                                <asp:ContentPlaceHolder ID="TopContent" runat="server" />
+                                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                                <asp:ContentPlaceHolder ID="BottomContent" runat="server" />
+                            </div>
+                            <!-- #content -->
+                        </div>
+                        <!-- #primary -->
+                    </div>
+                    <!-- #main -->
+                </div>
+                <!-- #wrapper -->
+            </div>
+        </div>
+    </form>
+</body>
+</html>

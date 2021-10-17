@@ -1,0 +1,87 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SchoolMasterPage.master.cs" Inherits="MasterPages_SchoolMasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta id="title" name="title" content="" enableviewstate="false" />
+    <meta id="keywords" name="keywords" content="" />
+    <meta id="description" name="description" content="" />
+
+    <link rel="shortcut icon" href="../App_Themes/Default/images/favicon.png" />
+    <!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="../App_Themes/Default/css/ie8.css" media="all" />
+<![endif]-->
+    <!--[if IE 9]>
+<link rel="stylesheet" type="text/css" href="../App_Themes/Default/css/ie9.css" media="all" />
+<![endif]-->
+    <%--<script language="javascript" type="text/javascript">
+        $("img").error(function () {
+            $(this).hide();
+        });
+    </script>--%>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src='<%# ResolveUrl("~/Script/schoolscript.js") %>'></script>
+    <script src="../Script/School/currentschool.js" type="text/javascript"></script>
+    <style>
+        .navbar {
+            margin-top: 0px !important;
+        }
+        /*body {
+            /*background: #2e2e2e url(../App_Themes/Default/images/bg1.png) repeat fixed !important;*/
+            /*background-color: rgb(0,132,157)!important;
+        }*/
+    </style>
+    <style type="text/css">
+        @import url("../../../Css/schoolcss.css");
+    </style>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+
+<body dir="rtl">
+    <form id="Form1" runat="server">
+        <div id="wrapper">
+            <!-- Menu -->
+            <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <div class="navbar-header page-scroll" style="visibility: hidden">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-main-collapse">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <a class="navbar-brand" href="مدرسه_یاب" style="padding-right: 150px;" title="مدرسه یاب" rel="home">
+                            <img height="50" runat="server" src="~/App_Themes/Default/images/logo.png" alt="مدرسه_یاب" />
+                        </a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="navbar-collapse navbar-right navbar-main-collapse collapse" style="height: 0.666667px;">
+                        <ul class="nav navbar-nav" id="tiny">
+                            <asp:Repeater runat="server" ID="MenuRepeater" DataSourceID="SchoolSiteMapDataSource">
+                                <ItemTemplate>
+                                    <usercontrol:menuitem runat="server"/>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                            <asp:SiteMapDataSource ID="SchoolSiteMapDataSource" runat="server" ShowStartingNode="False" SiteMapProvider="School" />
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container -->
+            </nav>
+            <!--Header-->
+            <UserControl:DynamicPageItem runat="server" Name="SchoolHeader" />
+            <div class="row hentry">
+                <h1 class="schooltitle">
+                    مدرسه
+                </h1>
+            </div>
+            <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+        <!--Footer-->
+        <UserControl:DynamicPageItem runat="server" Name="SchoolFooter" />
+
+        <asp:HiddenField ID="SchoolIdHiddenField" runat="server" ClientIDMode="Static" />
+        <asp:HiddenField ID="SchoolNameHiddenField" runat="server" ClientIDMode="Static" />
+    </form>
+</body>
+</html>

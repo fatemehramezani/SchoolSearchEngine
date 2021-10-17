@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="صفحه اصلی">
+    <siteMapNode url="~/مدرسه_یاب" description="App_Themes/Default/images/home-btn-text.png" title="بیابیم"/>
+    <!--<siteMapNode url="~/program" description="App_Themes/Default/images/papers-btn-text.png" title="فعالیت ها"/>-->
+    <!--<siteMapNode url="~/photo" description="App_Themes/Default/images/gallery-btn-text.png" title="گالری عکس"/>-->
+    <siteMapNode url="~/دانستنی"  description="App_Themes/Default/images/contact-btn-text.png" title="بیشتر بدانیم"/>
+    <siteMapNode url="~/خبر"  description="App_Themes/Default/images/contact-btn-text.png" title="آگاه شویم"/>
+    <siteMapNode url="~/ورود"  description="App_Themes/Default/images/contact-btn-text.png" title="ورود"/>
+
+    <!-- <siteMapNode url="design" description="App_Themes/Default/images/about-btn-text.png" title="طراحی"/>
+    <siteMapNode url="execute" description="App_Themes/Default/images/about-btn-text.png" title=" اجرا"/>
+    <siteMapNode url="sale"  description="App_Themes/Default/images/contact-btn-text.png" title="فروش کالا"/>-->
+    <!--<siteMapNode url="~/contact"  description="App_Themes/Default/images/contact-btn-text.png" title="تماس با ما"/>
+    <siteMapNode url="~/join"  description="App_Themes/Default/images/contact-btn-text.png" title="فرصتهای شغلی"/>-->
+    <!--<siteMapNode url="~/login" description="App_Themes/Default/images/login-btn-text.png" title="ورود"/>
+    <siteMapNode url="~/Register.aspx?Roles=QXBwbGljYW50" description="App_Themes/Default/images/sign-up-btn-text.png"  title="عضویت"/>
+		<siteMapNode url="~/Role/Guest/Common/Question.aspx"  description="App_Themes/Default/images/schedular-btn-text.png" title="محصولات"/>-->
+  </siteMapNode>
+</siteMap>

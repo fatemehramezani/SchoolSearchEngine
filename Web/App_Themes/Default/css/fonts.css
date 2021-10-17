@@ -1,0 +1,13 @@
+﻿@font-face {font-family: "B Mitra";src:url('fonts/mitra.eot?#') format('eot'),url('fonts/mitra.woff') format('woff'),url('fonts/mitra.ttf') format('truetype');}
+@font-face {font-family: "B Nazanin";src:url('fonts/nazanin.eot?#') format('eot'),url('fonts/nazanin.woff') format('woff'),url('fonts/nazanin.ttf') format('truetype');}
+@font-face {font-family: "B Kodak";src:url('fonts/Kodak.eot?#') format('eot'),url('fonts/Kodak.woff') format('woff'),url('fonts/Kodak.ttf') format('truetype');}
+@font-face {font-family: "bbcnasim";src:url('fonts/BBCNassim-Bold.eot?#') format('eot'),url('fonts/BBCNassim-Bold.woff') format('woff'),url('fonts/BBCNassim-Bold.ttf') format('truetype');}
+@font-face {font-family: "Droid_Naskh";src:url('fonts/DroidNaskh-Regular.eot?#') format('eot'),url('fonts/DroidNaskh-Regular.woff') format('woff'),url('fonts/DroidNaskh-Regular.ttf') format('truetype');}
+@font-face {font-family: "IRANSans";src:url('fonts/IRANSans.eot') format('eot'),url('fonts/IRANSans.woff') format('woff'),url('fonts/IRANSans.ttf') format('truetype');}
+
+/** {font-family:B Mitra,"B Mitra",tahoma;}*/
+.Nazanin{font-family:B Nazanin,"B Nazanin" !important;}
+.Kodak{font-family:B Kodak,"B Kodak" !important;}
+.bbcnasim{font-family:bbcnasim,"bbcnasim" !important;}
+.droid_naskh{font-family:Droid_Naskh,"Droid_Naskh" !important;}
+.IRANSans{font-family:IRANSans,"IRANSans" !important;}

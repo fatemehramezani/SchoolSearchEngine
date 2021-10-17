@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="" title="صفحه اصلی">
+    <siteMapNode url="~/Role/User/Slider.aspx" title="اسلایدر" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Role/User/PhotoCategory.aspx" title="آلبوم تصاویر" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+	  <siteMapNode url="~/Role/User/Blog.aspx" title="بلاگ" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Role/User/News.aspx" title="اخبار" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Role/User/DynamicPage.aspx" title="صفحات پویا" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    
+    <siteMapNode url="~/Account/ChangePassword.aspx" title="تغییر کلمه عبور" description="~/App_Themes/Default/images/booking/change-password-btn.png"/>
+    <siteMapNode url="~/Role/User/Administrator/Roles/UsersAndRoles.aspx" title="نقش کاربران" description="~/App_Themes/Default/images/booking/role-btn.png"/>
+    <siteMapNode url="~/Role/User/Administrator/Roles/CreateUserWizardWithRoles.aspx" title= "کاربر با نقش" description="~/App_Themes/Default/images/booking/role-btn.png"/>
+    <siteMapNode url="~/Role/User/Administrator/User.aspx" title=" کاربران" description="~/App_Themes/Default/images/booking/users-btn.png"/>
+    <siteMapNode url="~/Account/Profile.aspx" title="پروفایل" description="~/App_Themes/Default/images/booking/profile-btn.png"/>
+    <siteMapNode url="~/Logout.aspx" title="خروج" description="~/App_Themes/Default/images/booking/exit-btn.png" />
+  </siteMapNode>
+</siteMap>
+
+
+
+

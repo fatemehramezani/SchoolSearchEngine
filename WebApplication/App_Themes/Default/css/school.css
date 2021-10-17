@@ -1,0 +1,21 @@
+﻿school *{
+    font-size:large;
+}
+school h3 i{
+    color:rgba(0,132,157,0.5);
+}
+school h3{
+    font-size:medium;
+    color:rgb(0,132,157);
+}
+school *:not(h3)
+{
+    padding-right:5px;
+}
+.glyphicon
+{
+    font-family:'Glyphicons Halflings' !important;
+}
+Province,City,Region{
+    visibility:hidden;
+}
